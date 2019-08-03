@@ -33,7 +33,7 @@ class MainTabBarController: UITabBarController {
         viewControllers = [
         
             generateNavController(with: UIViewController(), title: "News", image: #imageLiteral(resourceName: "news")),
-            generateNavController(with: UIViewController(), title: "Prices", image: #imageLiteral(resourceName: "prices"))
+            generateNavController(with: CoinsController(), title: "Prices", image: #imageLiteral(resourceName: "prices"))
         ]
         
         tabBar.tintColor = UIColor.rgb(red: 51, green: 212, blue: 128)
