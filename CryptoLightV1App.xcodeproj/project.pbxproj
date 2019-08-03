@@ -14,6 +14,9 @@
 		1B0B51A922F1C9BA00759822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B0B51A722F1C9BA00759822 /* LaunchScreen.storyboard */; };
 		1B0B51B122F1CAA200759822 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51B022F1CAA200759822 /* MainTabBarController.swift */; };
 		1B0B51BB22F1CD8C00759822 /* UIColor+colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51BA22F1CD8C00759822 /* UIColor+colors.swift */; };
+		1B0B51C722F57A1D00759822 /* CoinMarketCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51C622F57A1D00759822 /* CoinMarketCap.swift */; };
+		1B0B51C922F57A5900759822 /* CoinsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51C822F57A5900759822 /* CoinsController.swift */; };
+		1B0B51CB22F57C6500759822 /* CustomCoinControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51CA22F57C6500759822 /* CustomCoinControllerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		1B0B51AA22F1C9BA00759822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0B51B022F1CAA200759822 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1B0B51BA22F1CD8C00759822 /* UIColor+colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+colors.swift"; sourceTree = "<group>"; };
+		1B0B51C622F57A1D00759822 /* CoinMarketCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMarketCap.swift; sourceTree = "<group>"; };
+		1B0B51C822F57A5900759822 /* CoinsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsController.swift; sourceTree = "<group>"; };
+		1B0B51CA22F57C6500759822 /* CustomCoinControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCoinControllerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				1B0B51AA22F1C9BA00759822 /* Info.plist */,
 				1B0B51B022F1CAA200759822 /* MainTabBarController.swift */,
 				1B0B51BA22F1CD8C00759822 /* UIColor+colors.swift */,
+				1B0B51C622F57A1D00759822 /* CoinMarketCap.swift */,
+				1B0B51C822F57A5900759822 /* CoinsController.swift */,
+				1B0B51CA22F57C6500759822 /* CustomCoinControllerCell.swift */,
 			);
 			path = CryptoLightV1App;
 			sourceTree = "<group>";
@@ -141,10 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0B51C922F57A5900759822 /* CoinsController.swift in Sources */,
 				1B0B51A122F1C9B900759822 /* ViewController.swift in Sources */,
 				1B0B51BB22F1CD8C00759822 /* UIColor+colors.swift in Sources */,
+				1B0B51CB22F57C6500759822 /* CustomCoinControllerCell.swift in Sources */,
 				1B0B519F22F1C9B900759822 /* AppDelegate.swift in Sources */,
 				1B0B51B122F1CAA200759822 /* MainTabBarController.swift in Sources */,
+				1B0B51C722F57A1D00759822 /* CoinMarketCap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
