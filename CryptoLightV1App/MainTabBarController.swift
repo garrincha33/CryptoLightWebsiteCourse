@@ -32,7 +32,7 @@ class MainTabBarController: UITabBarController {
         
         viewControllers = [
         
-            generateNavController(with: UIViewController(), title: "News", image: #imageLiteral(resourceName: "news")),
+            generateNavController(with: NewsController(), title: "News", image: #imageLiteral(resourceName: "news")),
             generateNavController(with: CoinsController(), title: "Prices", image: #imageLiteral(resourceName: "prices"))
         ]
         
