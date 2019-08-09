@@ -49,18 +49,4 @@ class MainTabBarController: UITabBarController {
         navController.tabBarItem.image = image
         return navController
     }
-    
-    private func test() {
-        
-        
-        
-    }
-    
-    private func testPart3() {
-        
-        
-        
-    }
-    
-    
 }

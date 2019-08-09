@@ -23,8 +23,7 @@ class CoinsController: UICollectionViewController, UICollectionViewDelegateFlowL
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        transparentNavBar()
         collectionView.backgroundColor = UIColor.rgb(red: 38, green: 45, blue: 47)
         collectionView.register(CustomCoinControllerCell.self, forCellWithReuseIdentifier: cellId)
         
@@ -55,8 +54,12 @@ class CoinsController: UICollectionViewController, UICollectionViewDelegateFlowL
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     }
-    
-    
+
+    private func transparentNavBar() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
     
     
     init() {

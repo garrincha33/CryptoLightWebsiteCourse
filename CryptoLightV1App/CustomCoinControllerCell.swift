@@ -27,21 +27,44 @@ class CustomCoinControllerCell: UICollectionViewCell {
         return lable
     }()
     
+    let titleContainer: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.gray
+        view.layer.cornerRadius = 16
+        view.clipsToBounds = true
+        view.layer.shadowRadius = 10
+        view.layer.shadowOpacity = 0.5
+        return view
+    }()
+
+    var item: CoinMarketCap? {
+        didSet {
+            symbol.text = item?.symbol
+            currentPrice.text = item?.price_usd
+        }
+    }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .red
+
+        addSubview(titleContainer)
+        titleContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        titleContainer.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        titleContainer.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        titleContainer.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        titleContainer.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         addSubview(symbol)
         symbol.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        symbol.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        symbol.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        symbol.leftAnchor.constraint(equalTo: leftAnchor, constant: 24).isActive = true
+        symbol.heightAnchor.constraint(equalTo: heightAnchor, constant: -10).isActive = true
         
         addSubview(currentPrice)
-        currentPrice.leftAnchor.constraint(equalTo: symbol.rightAnchor).isActive = true
-        currentPrice.rightAnchor.constraint(equalTo: rightAnchor, constant: -24).isActive = true
-        currentPrice.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        currentPrice.leftAnchor.constraint(equalTo: symbol.rightAnchor, constant: 75).isActive = true
+        currentPrice.rightAnchor.constraint(equalTo: rightAnchor, constant: -15).isActive = true
+        currentPrice.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
