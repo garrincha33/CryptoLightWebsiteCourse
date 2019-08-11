@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class NewsController: BaseListController {
     
     let cellId = "cellId"
     
@@ -47,25 +47,4 @@ class NewsController: UICollectionViewController, UICollectionViewDelegateFlowLa
         return CGSize(width: width + 150, height: width - 10)
         
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-    }
-    
-    private func transparentNavBar() {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-    }
-    
-
-    init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
 }

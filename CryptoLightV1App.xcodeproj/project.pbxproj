@@ -20,6 +20,8 @@
 		1B0B51CD22F897E300759822 /* NewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51CC22F897E300759822 /* NewsArticle.swift */; };
 		1B0B51CF22F8980E00759822 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51CE22F8980E00759822 /* NewsController.swift */; };
 		1B0B51D122F898F300759822 /* CustomNewsControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51D022F898F300759822 /* CustomNewsControllerCell.swift */; };
+		1B0B51D523001FCB00759822 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51D423001FCB00759822 /* BaseListController.swift */; };
+		F133DDDDE2C323D5FB298288 /* Pods_CryptoLightV1App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C239A7091AF5A8B4EF2369CB /* Pods_CryptoLightV1App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,10 @@
 		1B0B51CC22F897E300759822 /* NewsArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticle.swift; sourceTree = "<group>"; };
 		1B0B51CE22F8980E00759822 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		1B0B51D022F898F300759822 /* CustomNewsControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNewsControllerCell.swift; sourceTree = "<group>"; };
+		1B0B51D423001FCB00759822 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
+		B5C23EACE5D6FDF78F53CD18 /* Pods-CryptoLightV1App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoLightV1App.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoLightV1App/Pods-CryptoLightV1App.release.xcconfig"; sourceTree = "<group>"; };
+		C239A7091AF5A8B4EF2369CB /* Pods_CryptoLightV1App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoLightV1App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C842755FC8E77A1AFCC7B3 /* Pods-CryptoLightV1App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoLightV1App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoLightV1App/Pods-CryptoLightV1App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F133DDDDE2C323D5FB298288 /* Pods_CryptoLightV1App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +63,8 @@
 			children = (
 				1B0B519D22F1C9B900759822 /* CryptoLightV1App */,
 				1B0B519C22F1C9B900759822 /* Products */,
+				701765A8E7D235AF1F246698 /* Pods */,
+				C03FFC934262477C7340F76D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,8 +93,26 @@
 				1B0B51CC22F897E300759822 /* NewsArticle.swift */,
 				1B0B51CE22F8980E00759822 /* NewsController.swift */,
 				1B0B51D022F898F300759822 /* CustomNewsControllerCell.swift */,
+				1B0B51D423001FCB00759822 /* BaseListController.swift */,
 			);
 			path = CryptoLightV1App;
+			sourceTree = "<group>";
+		};
+		701765A8E7D235AF1F246698 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6C842755FC8E77A1AFCC7B3 /* Pods-CryptoLightV1App.debug.xcconfig */,
+				B5C23EACE5D6FDF78F53CD18 /* Pods-CryptoLightV1App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C03FFC934262477C7340F76D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C239A7091AF5A8B4EF2369CB /* Pods_CryptoLightV1App.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B0B51AD22F1C9BA00759822 /* Build configuration list for PBXNativeTarget "CryptoLightV1App" */;
 			buildPhases = (
+				09CB325B38E0C0290C9335DA /* [CP] Check Pods Manifest.lock */,
 				1B0B519722F1C9B900759822 /* Sources */,
 				1B0B519822F1C9B900759822 /* Frameworks */,
 				1B0B519922F1C9B900759822 /* Resources */,
+				F830F59D5FD42AD92E027CEF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +183,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09CB325B38E0C0290C9335DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CryptoLightV1App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F830F59D5FD42AD92E027CEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CryptoLightV1App/Pods-CryptoLightV1App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoLightV1App/Pods-CryptoLightV1App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1B0B519722F1C9B900759822 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -164,6 +232,7 @@
 				1B0B51BB22F1CD8C00759822 /* UIColor+colors.swift in Sources */,
 				1B0B51D122F898F300759822 /* CustomNewsControllerCell.swift in Sources */,
 				1B0B51CB22F57C6500759822 /* CustomCoinControllerCell.swift in Sources */,
+				1B0B51D523001FCB00759822 /* BaseListController.swift in Sources */,
 				1B0B519F22F1C9B900759822 /* AppDelegate.swift in Sources */,
 				1B0B51CD22F897E300759822 /* NewsArticle.swift in Sources */,
 				1B0B51CF22F8980E00759822 /* NewsController.swift in Sources */,
@@ -312,6 +381,7 @@
 		};
 		1B0B51AE22F1C9BA00759822 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6C842755FC8E77A1AFCC7B3 /* Pods-CryptoLightV1App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -330,6 +400,7 @@
 		};
 		1B0B51AF22F1C9BA00759822 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5C23EACE5D6FDF78F53CD18 /* Pods-CryptoLightV1App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
