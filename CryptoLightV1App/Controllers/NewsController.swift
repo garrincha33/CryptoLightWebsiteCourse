@@ -14,13 +14,7 @@ class NewsController: BaseListController {
     let cellId = "cellId"
     let url = FULL_HEADLINES
     
-    var newsItems = [
-        NewsArticle(title: "Test1"),
-        NewsArticle(title: "Test2"),
-        NewsArticle(title: "Test3"),
-        NewsArticle(title: "Test4"),
-        NewsArticle(title: "Test5")
-    ]
+    var items = [NewsArticle]()
     
     
     override func viewDidLoad() {
@@ -29,19 +23,19 @@ class NewsController: BaseListController {
         collectionView.register(CustomNewsControllerCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.backgroundColor = UIColor.rgb(red: 38, green: 45, blue: 47)
         
-        //fetchNews()
+        fetchNews()
 
     }
     
     //MARK:- collectionView functions
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return newsItems.count
+        return items.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CustomNewsControllerCell
-        
+        cell.item = items[indexPath.row]
         return cell
         
     }
@@ -60,8 +54,35 @@ class NewsController: BaseListController {
             }
             
             guard let data = dataResponse.data else {return}
-            let dummyString = String(data: data, encoding: .utf8)
-            print(dummyString ?? "")
+//            let dummyString = String(data: data, encoding: .utf8)
+//            print(dummyString ?? "")
+            
+            do {
+                
+                let searchResult =  try
+                    JSONDecoder().decode(SearchResults.self, from: data)
+                print("Result Count:-", searchResult.totalResults)
+                searchResult.articles.forEach { (article) in
+                    print(article.title ?? "", article.url ?? "")
+                }
+                
+                self.items = searchResult.articles
+                self.collectionView.reloadData()
+                
+                
+
+            } catch let decodeErr {
+                print("unable to decode", decodeErr)
+            }
         }
     }
+    
+    
+    
+    
+    struct SearchResults: Decodable  {
+        let totalResults: Int
+        let articles: [NewsArticle]
+    }
+    
 }
