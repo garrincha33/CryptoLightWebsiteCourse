@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class NewsController: BaseListController {
     
     let cellId = "cellId"
+    let url = FULL_HEADLINES
     
     var newsItems = [
         NewsArticle(title: "Test1"),
@@ -26,6 +28,8 @@ class NewsController: BaseListController {
         transparentNavBar()
         collectionView.register(CustomNewsControllerCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.backgroundColor = UIColor.rgb(red: 38, green: 45, blue: 47)
+        
+        //fetchNews()
 
     }
     
@@ -46,5 +50,18 @@ class NewsController: BaseListController {
         let width = (view.frame.width - 2 * 16) / 2 + 8
         return CGSize(width: width + 150, height: width - 10)
         
+    }
+    
+    fileprivate func fetchNews() {
+        AF.request(url).response { (dataResponse) in
+            if let err = dataResponse.error {
+                print("please contact APINews", err)
+                return
+            }
+            
+            guard let data = dataResponse.data else {return}
+            let dummyString = String(data: data, encoding: .utf8)
+            print(dummyString ?? "")
+        }
     }
 }

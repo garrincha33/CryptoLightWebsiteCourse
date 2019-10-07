@@ -21,6 +21,7 @@
 		1B0B51CF22F8980E00759822 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51CE22F8980E00759822 /* NewsController.swift */; };
 		1B0B51D122F898F300759822 /* CustomNewsControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51D022F898F300759822 /* CustomNewsControllerCell.swift */; };
 		1B0B51D523001FCB00759822 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51D423001FCB00759822 /* BaseListController.swift */; };
+		1B4C6949234B5096005EF72D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4C6948234B5096005EF72D /* Constants.swift */; };
 		F133DDDDE2C323D5FB298288 /* Pods_CryptoLightV1App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C239A7091AF5A8B4EF2369CB /* Pods_CryptoLightV1App.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		1B0B51CE22F8980E00759822 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		1B0B51D022F898F300759822 /* CustomNewsControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNewsControllerCell.swift; sourceTree = "<group>"; };
 		1B0B51D423001FCB00759822 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
+		1B4C6948234B5096005EF72D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B5C23EACE5D6FDF78F53CD18 /* Pods-CryptoLightV1App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoLightV1App.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoLightV1App/Pods-CryptoLightV1App.release.xcconfig"; sourceTree = "<group>"; };
 		C239A7091AF5A8B4EF2369CB /* Pods_CryptoLightV1App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoLightV1App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C842755FC8E77A1AFCC7B3 /* Pods-CryptoLightV1App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoLightV1App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoLightV1App/Pods-CryptoLightV1App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				1B0B51CE22F8980E00759822 /* NewsController.swift */,
 				1B0B51D022F898F300759822 /* CustomNewsControllerCell.swift */,
 				1B0B51D423001FCB00759822 /* BaseListController.swift */,
+				1B4C6948234B5096005EF72D /* Constants.swift */,
 			);
 			path = CryptoLightV1App;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				1B0B51CF22F8980E00759822 /* NewsController.swift in Sources */,
 				1B0B51B122F1CAA200759822 /* MainTabBarController.swift in Sources */,
 				1B0B51C722F57A1D00759822 /* CoinMarketCap.swift in Sources */,
+				1B4C6949234B5096005EF72D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
