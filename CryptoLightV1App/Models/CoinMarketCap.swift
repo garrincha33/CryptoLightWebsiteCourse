@@ -11,4 +11,5 @@ import Foundation
 struct CoinMarketCap: Decodable {
     var symbol: String?
     var price_usd: String?
+    var id: String?
 }

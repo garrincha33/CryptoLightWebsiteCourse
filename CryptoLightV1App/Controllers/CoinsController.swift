@@ -9,29 +9,53 @@
 import UIKit
 import Alamofire
 
-class CoinsController: BaseListController {
+class CoinsController: BaseListController, UISearchBarDelegate {
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     let cellId = "cellId"
     let url = FULL_COINS
     
-    var items = [
-    
-        CoinMarketCap(symbol: "BTC", price_usd: "3045"),
-        CoinMarketCap(symbol: "XRP", price_usd: "2045"),
-        CoinMarketCap(symbol: "ETH", price_usd: "1045"),
-    
-    ]
-    
-    
+    var items = [CoinMarketCap]()
+    var itemsCopy = [CoinMarketCap]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar()
         collectionView.backgroundColor = UIColor.rgb(red: 38, green: 45, blue: 47)
         collectionView.register(CustomCoinControllerCell.self, forCellWithReuseIdentifier: cellId)
+        setupSearchBar()
         fetchCoins()
-        
+    
     }
     
+    fileprivate func setupSearchBar() {
+        
+        self.definesPresentationContext = true
+        navigationItem.searchController = searchController
+        
+        searchController.searchBar.delegate = self
+        searchController.searchBar.searchBarStyle = .minimal
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.placeholder = "enter the name of your currency"
+        searchController.searchBar.tintColor = UIColor.rgb(red: 51, green: 212, blue: 128)
+    }
+    
+    fileprivate func doSearch() {
+        if let search = searchController.searchBar.text {
+            items = (search.isEmpty) ? itemsCopy : itemsCopy.filter({$0.id?.localizedCaseInsensitiveContains(search) == true})
+        }
+        collectionView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        doSearch()
+        searchBar.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        doSearch()
+    }
     //MARK:- collection view functions
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,9 +65,7 @@ class CoinsController: BaseListController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CustomCoinControllerCell
-        cell.symbol.text = items[indexPath.row].symbol
-        cell.currentPrice.text = items[indexPath.row].price_usd
-        
+        cell.item = items[indexPath.row]
         return cell
         
     }
@@ -70,16 +92,13 @@ class CoinsController: BaseListController {
                     JSONDecoder().decode([CoinMarketCap].self, from: data)
                 for _ in searchResult {
                     self.items = searchResult
+                    self.itemsCopy = searchResult
                     self.collectionView.reloadData()
                 }
                 
             } catch let err {
                 print("failed to decode", err)
             }
-            
-            
         }
-        
-        
     }
 }
