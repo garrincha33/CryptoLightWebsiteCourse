@@ -36,6 +36,16 @@ class CustomNewsControllerCell: UICollectionViewCell {
         lable.numberOfLines = -1
         return lable
     }()
+    
+    var item: NewsArticle? {
+        
+        didSet {
+            
+            headerLable.text = item?.title
+            
+        }
+        
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

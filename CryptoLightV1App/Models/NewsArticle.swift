@@ -8,6 +8,7 @@
 
 import Foundation
 
-struct NewsArticle {
+struct NewsArticle: Decodable {
     var title: String?
+    var url: String?
 }
