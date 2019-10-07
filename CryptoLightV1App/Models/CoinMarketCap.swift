@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CoinMarketCap {
+struct CoinMarketCap: Decodable {
     var symbol: String?
     var price_usd: String?
 }

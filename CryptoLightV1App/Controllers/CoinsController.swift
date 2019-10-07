@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class CoinsController: BaseListController {
     
     let cellId = "cellId"
+    let url = FULL_COINS
     
     var items = [
     
@@ -26,6 +28,7 @@ class CoinsController: BaseListController {
         transparentNavBar()
         collectionView.backgroundColor = UIColor.rgb(red: 38, green: 45, blue: 47)
         collectionView.register(CustomCoinControllerCell.self, forCellWithReuseIdentifier: cellId)
+        fetchCoins()
         
     }
     
@@ -49,5 +52,34 @@ class CoinsController: BaseListController {
         
         let width = (view.frame.width - 2 * 16) / 2 + 8
         return CGSize(width: width + 150, height: width - 70)
+    }
+    
+    fileprivate func fetchCoins() {
+        
+        AF.request(url).responseData { (dataResponse) in
+            if let err = dataResponse.error {
+                print("please contact coinAPI unable to retrieve", err)
+                return
+            }
+            
+            guard let data = dataResponse.data else {return}
+ 
+            do {
+                
+                let searchResult =  try
+                    JSONDecoder().decode([CoinMarketCap].self, from: data)
+                for _ in searchResult {
+                    self.items = searchResult
+                    self.collectionView.reloadData()
+                }
+                
+            } catch let err {
+                print("failed to decode", err)
+            }
+            
+            
+        }
+        
+        
     }
 }
