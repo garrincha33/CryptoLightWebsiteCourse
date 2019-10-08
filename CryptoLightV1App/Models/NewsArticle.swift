@@ -11,4 +11,5 @@ import Foundation
 struct NewsArticle: Decodable {
     var title: String?
     var url: String?
+    var urlToImage: String?
 }

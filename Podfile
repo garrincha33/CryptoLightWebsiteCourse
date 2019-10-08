@@ -7,5 +7,6 @@ target 'CryptoLightV1App' do
 
   # Pods for CryptoLightV1App
   pod 'Alamofire', '~> 5.0.0-beta.5'
+  pod 'SDWebImage', '~> 5.0'
 
 end

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CustomNewsControllerCell: UICollectionViewCell {
     
@@ -42,6 +43,12 @@ class CustomNewsControllerCell: UICollectionViewCell {
         didSet {
             
             headerLable.text = item?.title
+            
+            guard let images = item?.urlToImage else {return}
+            print("count \(images.count)")
+            print("image string \(images)")
+            guard let url = URL(string: images) else {return}
+            titleContainer.sd_setImage(with: url, completed: nil)
             
         }
         
