@@ -12,7 +12,7 @@ class CustomCoinControllerCell: UICollectionViewCell {
     
     var symbol: UILabel = {
         let lable = UILabel()
-        lable.font = UIFont(name: "systemFont", size: 40)
+        lable.font = UIFont(name: "Poppins-Bold", size: 30)
         lable.textColor = .white
         lable.translatesAutoresizingMaskIntoConstraints = false
         return lable
@@ -21,7 +21,7 @@ class CustomCoinControllerCell: UICollectionViewCell {
     
     var currentPrice: UILabel = {
         let lable = UILabel()
-        lable.font = UIFont(name: "systemFont", size: 20)
+        lable.font = UIFont(name: "Poppins-Light", size: 20)
         lable.textColor = .green
         lable.translatesAutoresizingMaskIntoConstraints = false
         return lable
@@ -41,7 +41,8 @@ class CustomCoinControllerCell: UICollectionViewCell {
     var item: CoinMarketCap? {
         didSet {
             symbol.text = item?.symbol
-            currentPrice.text = item?.price_usd
+//            currentPrice.text = item?.price_usd
+            currentPrice.text = "\(convertToCurrency((item?.price_usd)!))".trunc(length: 8)
         }
     }
     
@@ -71,5 +72,18 @@ class CustomCoinControllerCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    fileprivate func convertToCurrency(_ number: String) -> String {
+        
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.numberStyle = NumberFormatter.Style.currency
+        
+        let numberDouble = Double(number)!
+        if numberDouble >= 1000 {
+            
+            let priceOfCoin: NSNumber = numberDouble as NSNumber
+            let priceString = currencyFormatter.string(from: priceOfCoin)!
+            return priceString
+        }
+        return "$\(number)"
+    }
 }
