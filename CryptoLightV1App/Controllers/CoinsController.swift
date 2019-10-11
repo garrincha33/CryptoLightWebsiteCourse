@@ -77,27 +77,13 @@ class CoinsController: BaseListController, UISearchBarDelegate {
     }
     
     fileprivate func fetchCoins() {
-        
-        AF.request(url).responseData { (dataResponse) in
-            if let err = dataResponse.error {
-                print("please contact coinAPI unable to retrieve", err)
-                return
-            }
-            
-            guard let data = dataResponse.data else {return}
- 
-            do {
-                
-                let searchResult =  try
-                    JSONDecoder().decode([CoinMarketCap].self, from: data)
-                for _ in searchResult {
-                    self.items = searchResult
-                    self.itemsCopy = searchResult
+        Service.shared.fetchCoinsFromApi { (coins) in
+            for _ in coins {
+                self.items = coins
+                self.itemsCopy = coins
+                DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
-                
-            } catch let err {
-                print("failed to decode", err)
             }
         }
     }

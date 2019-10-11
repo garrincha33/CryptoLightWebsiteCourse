@@ -14,7 +14,7 @@ class CustomCoinControllerCell: UICollectionViewCell {
         let lable = UILabel()
         lable.font = UIFont(name: "Poppins-Bold", size: 30)
         lable.textColor = .white
-        lable.translatesAutoresizingMaskIntoConstraints = false
+        //lable.translatesAutoresizingMaskIntoConstraints = false
         return lable
     }()
     
@@ -29,7 +29,7 @@ class CustomCoinControllerCell: UICollectionViewCell {
     
     let titleContainer: UIImageView = {
         let view = UIImageView()
-        view.translatesAutoresizingMaskIntoConstraints = false
+        //view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.gray
         view.layer.cornerRadius = 16
         view.clipsToBounds = true
@@ -51,21 +51,13 @@ class CustomCoinControllerCell: UICollectionViewCell {
         super.init(frame: frame)
 
         addSubview(titleContainer)
-        titleContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-        titleContainer.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        titleContainer.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        titleContainer.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        titleContainer.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        titleContainer.anchor(top: safeAreaLayoutGuide.topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 50, paddingRight: 0, width: 150, height: 100)
         
         addSubview(symbol)
-        symbol.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        symbol.leftAnchor.constraint(equalTo: leftAnchor, constant: 24).isActive = true
-        symbol.heightAnchor.constraint(equalTo: heightAnchor, constant: -10).isActive = true
+        symbol.anchor(top: titleContainer.topAnchor, left: titleContainer.leftAnchor, bottom: nil, right: nil, paddingTop: 25, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         addSubview(currentPrice)
-        currentPrice.leftAnchor.constraint(equalTo: symbol.rightAnchor, constant: 75).isActive = true
-        currentPrice.rightAnchor.constraint(equalTo: rightAnchor, constant: -15).isActive = true
-        currentPrice.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        currentPrice.anchor(top: titleContainer.topAnchor, left: symbol.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 30, paddingLeft: 25, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {
