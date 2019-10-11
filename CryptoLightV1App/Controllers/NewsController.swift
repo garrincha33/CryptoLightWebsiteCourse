@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class NewsController: BaseListController {
     
@@ -47,42 +46,16 @@ class NewsController: BaseListController {
     }
     
     fileprivate func fetchNews() {
-        AF.request(url).response { (dataResponse) in
-            if let err = dataResponse.error {
-                print("please contact APINews", err)
+        Service.shared.fetchArticlesFromApi { (newsArticle, err) in
+            if let err = err {
+                print("unable to list current news articles at this time", err)
                 return
             }
-            
-            guard let data = dataResponse.data else {return}
-//            let dummyString = String(data: data, encoding: .utf8)
-//            print(dummyString ?? "")
-            
-            do {
-                
-                let searchResult =  try
-                    JSONDecoder().decode(SearchResults.self, from: data)
-                print("Result Count:-", searchResult.totalResults)
-                searchResult.articles.forEach { (article) in
-                    print(article.title ?? "", article.url ?? "")
-                }
-                
-                self.items = searchResult.articles
+            guard let articlesFromApi = newsArticle else {return}
+            self.items = articlesFromApi
+            DispatchQueue.main.async {
                 self.collectionView.reloadData()
-                
-                
-
-            } catch let decodeErr {
-                print("unable to decode", decodeErr)
             }
         }
     }
-    
-    
-    
-    
-    struct SearchResults: Decodable  {
-        let totalResults: Int
-        let articles: [NewsArticle]
-    }
-    
 }

@@ -13,3 +13,8 @@ struct NewsArticle: Decodable {
     var url: String?
     var urlToImage: String?
 }
+
+ struct SearchResults: Decodable  {
+     let totalResults: Int
+     let articles: [NewsArticle]
+ }
