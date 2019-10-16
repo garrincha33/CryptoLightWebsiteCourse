@@ -58,17 +58,10 @@ class CustomNewsControllerCell: UICollectionViewCell {
         super.init(frame: frame)
         
         addSubview(titleContainer)
-        titleContainer.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        titleContainer.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        titleContainer.heightAnchor.constraint(equalToConstant: 160).isActive = true
-        titleContainer.widthAnchor.constraint(equalToConstant: 330).isActive = true
+        titleContainer.anchor(top: safeAreaLayoutGuide.topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 330, height: 160)
         
         addSubview(headerLable)
-        headerLable.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        headerLable.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        headerLable.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        headerLable.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        headerLable.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        headerLable.anchor(top: safeAreaLayoutGuide.topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 100, height: 60)
         
     }
     
