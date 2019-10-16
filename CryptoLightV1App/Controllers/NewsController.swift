@@ -8,7 +8,17 @@
 
 import UIKit
 
-class NewsController: BaseListController {
+class NewsController: BaseListController, NewsDetailsWebControllerDelegate {
+    
+    func didSendUrl(article: NewsArticle) {
+        let newsDetailController = NewsDetailsController()
+        newsDetailController.delegate = self
+        guard let urlToSend = article.url else {return}
+        newsDetailController.newsArticles = article
+        newsDetailController.articleUrl = urlToSend
+        navigationController?.pushViewController(newsDetailController, animated: true)
+    }
+    
     
     let cellId = "cellId"
     let url = FULL_HEADLINES
@@ -43,6 +53,13 @@ class NewsController: BaseListController {
         let width = (view.frame.width - 2 * 16) / 2 + 8
         return CGSize(width: width + 150, height: width - 10)
         
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let article = items[indexPath.row]
+        didSendUrl(article: article)
+
     }
     
     fileprivate func fetchNews() {

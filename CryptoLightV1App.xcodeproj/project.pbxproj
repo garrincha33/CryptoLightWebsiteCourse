@@ -21,6 +21,7 @@
 		1B0B51CF22F8980E00759822 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51CE22F8980E00759822 /* NewsController.swift */; };
 		1B0B51D122F898F300759822 /* CustomNewsControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51D022F898F300759822 /* CustomNewsControllerCell.swift */; };
 		1B0B51D523001FCB00759822 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B51D423001FCB00759822 /* BaseListController.swift */; };
+		1B2A30E7235786AE00D7AAE3 /* NewsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2A30E6235786AE00D7AAE3 /* NewsDetailsController.swift */; };
 		1B46E729234E62790016DA93 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B46E717234E62760016DA93 /* Poppins-SemiBold.ttf */; };
 		1B46E72A234E62790016DA93 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B46E718234E62760016DA93 /* Poppins-BoldItalic.ttf */; };
 		1B46E72B234E62790016DA93 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B46E719234E62770016DA93 /* Poppins-ExtraBold.ttf */; };
@@ -63,6 +64,7 @@
 		1B0B51CE22F8980E00759822 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		1B0B51D022F898F300759822 /* CustomNewsControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNewsControllerCell.swift; sourceTree = "<group>"; };
 		1B0B51D423001FCB00759822 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
+		1B2A30E6235786AE00D7AAE3 /* NewsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsController.swift; sourceTree = "<group>"; };
 		1B46E717234E62760016DA93 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		1B46E718234E62760016DA93 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
 		1B46E719234E62770016DA93 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				1B0B51D423001FCB00759822 /* BaseListController.swift */,
 				1B0B51CE22F8980E00759822 /* NewsController.swift */,
 				1B0B51B022F1CAA200759822 /* MainTabBarController.swift */,
+				1B2A30E6235786AE00D7AAE3 /* NewsDetailsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				1B46E73E235104BC0016DA93 /* ConstraintsAnchor.swift in Sources */,
 				1B0B51CF22F8980E00759822 /* NewsController.swift in Sources */,
 				1B0B51B122F1CAA200759822 /* MainTabBarController.swift in Sources */,
+				1B2A30E7235786AE00D7AAE3 /* NewsDetailsController.swift in Sources */,
 				1B0B51C722F57A1D00759822 /* CoinMarketCap.swift in Sources */,
 				1B4C6949234B5096005EF72D /* Constants.swift in Sources */,
 			);
