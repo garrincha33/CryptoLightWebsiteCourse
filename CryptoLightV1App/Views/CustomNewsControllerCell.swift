@@ -13,7 +13,7 @@ class CustomNewsControllerCell: UICollectionViewCell {
     
     var titleContainer: UIImageView = {
         let view = UIImageView(image: #imageLiteral(resourceName: "dummyImage"))
-        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .gray
         view.layer.cornerRadius = 16
         view.clipsToBounds = true
@@ -61,7 +61,7 @@ class CustomNewsControllerCell: UICollectionViewCell {
         titleContainer.anchor(top: safeAreaLayoutGuide.topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 330, height: 160)
         
         addSubview(headerLable)
-        headerLable.anchor(top: safeAreaLayoutGuide.topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 100, height: 60)
+        headerLable.anchor(top: safeAreaLayoutGuide.topAnchor, left: titleContainer.leftAnchor, bottom: nil, right: titleContainer.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 60)
         
     }
     
