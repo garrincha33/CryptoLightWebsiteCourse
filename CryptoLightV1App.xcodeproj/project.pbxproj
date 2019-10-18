@@ -44,6 +44,8 @@
 		1B46E73E235104BC0016DA93 /* ConstraintsAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B46E73D235104BC0016DA93 /* ConstraintsAnchor.swift */; };
 		1B46E7402351117E0016DA93 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B46E73F2351117E0016DA93 /* APIService.swift */; };
 		1B4C6949234B5096005EF72D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4C6948234B5096005EF72D /* Constants.swift */; };
+		1B6A258323598EC300B45EEF /* UILable+MassLables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A258223598EC300B45EEF /* UILable+MassLables.swift */; };
+		1B6A25852359910600B45EEF /* CoinsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A25842359910600B45EEF /* CoinsDetailsController.swift */; };
 		F133DDDDE2C323D5FB298288 /* Pods_CryptoLightV1App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C239A7091AF5A8B4EF2369CB /* Pods_CryptoLightV1App.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,8 @@
 		1B46E73D235104BC0016DA93 /* ConstraintsAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintsAnchor.swift; sourceTree = "<group>"; };
 		1B46E73F2351117E0016DA93 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		1B4C6948234B5096005EF72D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1B6A258223598EC300B45EEF /* UILable+MassLables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILable+MassLables.swift"; sourceTree = "<group>"; };
+		1B6A25842359910600B45EEF /* CoinsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsDetailsController.swift; sourceTree = "<group>"; };
 		B5C23EACE5D6FDF78F53CD18 /* Pods-CryptoLightV1App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoLightV1App.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoLightV1App/Pods-CryptoLightV1App.release.xcconfig"; sourceTree = "<group>"; };
 		C239A7091AF5A8B4EF2369CB /* Pods_CryptoLightV1App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoLightV1App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C842755FC8E77A1AFCC7B3 /* Pods-CryptoLightV1App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoLightV1App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoLightV1App/Pods-CryptoLightV1App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				1B0B51CE22F8980E00759822 /* NewsController.swift */,
 				1B0B51B022F1CAA200759822 /* MainTabBarController.swift */,
 				1B2A30E6235786AE00D7AAE3 /* NewsDetailsController.swift */,
+				1B6A25842359910600B45EEF /* CoinsDetailsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				1B0B51BA22F1CD8C00759822 /* UIColor+colors.swift */,
 				1B46E73B234E65600016DA93 /* String+truncate.swift */,
 				1B46E73D235104BC0016DA93 /* ConstraintsAnchor.swift */,
+				1B6A258223598EC300B45EEF /* UILable+MassLables.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -377,6 +383,7 @@
 				1B0B51A122F1C9B900759822 /* ViewController.swift in Sources */,
 				1B0B51BB22F1CD8C00759822 /* UIColor+colors.swift in Sources */,
 				1B0B51D122F898F300759822 /* CustomNewsControllerCell.swift in Sources */,
+				1B6A25852359910600B45EEF /* CoinsDetailsController.swift in Sources */,
 				1B0B51CB22F57C6500759822 /* CustomCoinControllerCell.swift in Sources */,
 				1B0B51D523001FCB00759822 /* BaseListController.swift in Sources */,
 				1B0B519F22F1C9B900759822 /* AppDelegate.swift in Sources */,
@@ -386,6 +393,7 @@
 				1B0B51CF22F8980E00759822 /* NewsController.swift in Sources */,
 				1B0B51B122F1CAA200759822 /* MainTabBarController.swift in Sources */,
 				1B2A30E7235786AE00D7AAE3 /* NewsDetailsController.swift in Sources */,
+				1B6A258323598EC300B45EEF /* UILable+MassLables.swift in Sources */,
 				1B0B51C722F57A1D00759822 /* CoinMarketCap.swift in Sources */,
 				1B4C6949234B5096005EF72D /* Constants.swift in Sources */,
 			);
