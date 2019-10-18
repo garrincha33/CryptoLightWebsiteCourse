@@ -32,10 +32,7 @@ class NewsDetailsController: UIViewController {
         view.scrollView.bounces = false
         return view
     }()
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

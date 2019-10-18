@@ -26,7 +26,7 @@ class CustomCoinControllerCell: UICollectionViewCell {
         lable.translatesAutoresizingMaskIntoConstraints = false
         return lable
     }()
-    
+
     let titleContainer: UIImageView = {
         let view = UIImageView()
         //view.translatesAutoresizingMaskIntoConstraints = false
@@ -59,6 +59,8 @@ class CustomCoinControllerCell: UICollectionViewCell {
         addSubview(currentPrice)
         currentPrice.anchor(top: titleContainer.topAnchor, left: symbol.rightAnchor, bottom: nil, right: rightAnchor, paddingTop: 30, paddingLeft: 25, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

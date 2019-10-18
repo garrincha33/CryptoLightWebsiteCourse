@@ -76,6 +76,12 @@ class CoinsController: BaseListController, UISearchBarDelegate {
         return CGSize(width: width + 150, height: width - 70)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = CoinsDetailsController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
     fileprivate func fetchCoins() {
         Service.shared.fetchCoinsFromApi { (coins) in
             for _ in coins {
