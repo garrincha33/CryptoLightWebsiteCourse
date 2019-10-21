@@ -78,6 +78,8 @@ class CoinsController: BaseListController, UISearchBarDelegate {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = CoinsDetailsController()
+        let coins = items[indexPath.row]
+        controller.items = coins
         navigationController?.pushViewController(controller, animated: true)
     }
     
